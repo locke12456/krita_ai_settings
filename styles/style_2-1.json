@@ -6,11 +6,11 @@
     "loras": [
         {
             "name": "lora\\xl\\assets\\Pony_DetailV2.0.safetensors",
-            "strength": 0.0
+            "strength": 1.0
         },
         {
             "name": "lora\\xl\\ClearHand-V2.safetensors",
-            "strength": 0.0
+            "strength": 1.0
         }
     ],
     "style_prompt": "score_9, score_8_up,score_7_up, source_anime BREAK rating_explicit, shiny_skin, detailed surroundings, little details, hyperdetailed, 4k, high quality, masterpiece, shadow play, zPDXL3,",

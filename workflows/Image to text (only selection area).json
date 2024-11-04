@@ -1,0 +1,128 @@
+{
+  "0": {
+    "inputs": {
+      "name": "threshold",
+      "type": "number",
+      "default": 0.35,
+      "min": 0,
+      "max": 1
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "1": {
+    "inputs": {
+      "name": "character threshold",
+      "type": "number",
+      "default": 0.85,
+      "min": 0,
+      "max": 1
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "2": {
+    "inputs": {},
+    "class_type": "ETN_KritaCanvas",
+    "_meta": {
+      "title": "Krita Canvas"
+    }
+  },
+  "3": {
+    "inputs": {},
+    "class_type": "ETN_KritaSelection",
+    "_meta": {
+      "title": "Krita Selection"
+    }
+  },
+  "4": {
+    "inputs": {
+      "padding_left": 0,
+      "padding_right": 0,
+      "padding_top": 0,
+      "padding_bottom": 0,
+      "image": [
+        "2",
+        0
+      ],
+      "mask": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "Bounded Image Crop with Mask",
+    "_meta": {
+      "title": "Bounded Image Crop with Mask"
+    }
+  },
+  "5": {
+    "inputs": {
+      "name": "model",
+      "type": "choice",
+      "default": "wd-v1-4-moat-tagger-v2",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "6": {
+    "inputs": {
+      "images": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "7": {
+    "inputs": {
+      "model": [
+        "5",
+        0
+      ],
+      "threshold": [
+        "0",
+        0
+      ],
+      "character_threshold": [
+        "1",
+        0
+      ],
+      "replace_underscore": false,
+      "trailing_comma": false,
+      "exclude_tags": "",
+      "image": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "WD14Tagger|pysssss",
+    "_meta": {
+      "title": "WD14 Tagger \ud83d\udc0d"
+    }
+  },
+  "8": {
+    "inputs": {
+      "name": "Output",
+      "type": "text",
+      "value": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaSendText",
+    "_meta": {
+      "title": "Send Text"
+    }
+  }
+}
