@@ -1,0 +1,73 @@
+{
+  "0": {
+    "inputs": {
+      "name": "threshold",
+      "type": "number",
+      "default": 0.35,
+      "min": 0,
+      "max": 1
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "1": {
+    "inputs": {
+      "name": "character threshold",
+      "type": "number",
+      "default": 0.85,
+      "min": 0,
+      "max": 1
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "2": {
+    "inputs": {},
+    "class_type": "ETN_KritaCanvas",
+    "_meta": {
+      "title": "Krita Canvas"
+    }
+  },
+  "3": {
+    "inputs": {
+      "model": "wd-v1-4-moat-tagger-v2",
+      "threshold": [
+        "0",
+        0
+      ],
+      "character_threshold": [
+        "1",
+        0
+      ],
+      "replace_underscore": false,
+      "trailing_comma": false,
+      "exclude_tags": "",
+      "image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "WD14Tagger|pysssss",
+    "_meta": {
+      "title": "WD14 Tagger \ud83d\udc0d"
+    }
+  },
+  "4": {
+    "inputs": {
+      "name": "Output",
+      "type": "text",
+      "value": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaSendText",
+    "_meta": {
+      "title": "Send Text"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+    "name": "pony xl light 4 step",
+    "version": 1,
+    "sd_version": "auto",
+    "sd_checkpoint": "models\\00\\SDXL\\autismmixSDXL_autismmixLightning_4step.safetensors",
+    "loras": [
+        {
+            "name": "lora\\xl\\assets\\Pony_DetailV2.0.safetensors",
+            "strength": 0.0
+        },
+        {
+            "name": "lora\\xl\\style\\Unlight.safetensors",
+            "strength": 1.0
+        }
+    ],
+    "style_prompt": "score_9, score_8_up,score_7_up, source_anime BREAK rating_explicit, shiny_skin, detailed surroundings, little details, hyperdetailed, 4k, high quality, masterpiece,  shadow play,",
+    "negative_prompt": " out_of_frame, score_6, score_5, score_4, score_3, score_2, score_1,  zPDXL-neg, shadows, nsfw, nipples, pussy, fat, muscular, ",
+    "vae": "models\\sdxl_vae.safetensors",
+    "clip_skip": 2,
+    "v_prediction_zsnr": false,
+    "self_attention_guidance": false,
+    "preferred_resolution": 1024,
+    "sampler": "DPM++ 2M / sgm_uniform",
+    "sampler_steps": 8,
+    "cfg_scale": 1.5,
+    "live_sampler": "Alternative - Euler A",
+    "live_sampler_steps": 8,
+    "live_cfg_scale": 2.0
+}

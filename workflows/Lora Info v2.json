@@ -1,0 +1,112 @@
+{
+  "0": {
+    "inputs": {
+      "name": "Parameter",
+      "type": "prompt (positive)",
+      "default": "",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "1": {
+    "inputs": {
+      "text": [
+        "0",
+        0
+      ],
+      "find": "<lora:",
+      "replace": ""
+    },
+    "class_type": "Text Find and Replace",
+    "_meta": {
+      "title": "Text Find and Replace"
+    }
+  },
+  "2": {
+    "inputs": {
+      "text": [
+        "1",
+        0
+      ],
+      "find": ">",
+      "replace": ".safetensors"
+    },
+    "class_type": "Text Find and Replace",
+    "_meta": {
+      "title": "Text Find and Replace"
+    }
+  },
+  "3": {
+    "inputs": {
+      "lora_name": "locon\\locon\\asset\\ExplorationDiaryStyle_v10.safetensors",
+      "force_fetch": false,
+      "append_loraname_if_empty": true,
+      "override_lora_name": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "LoraTagsOnly",
+    "_meta": {
+      "title": "LoraTagsOnly"
+    }
+  },
+  "4": {
+    "inputs": {
+      "delimiter": ", ",
+      "text_list": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "Text List to Text",
+    "_meta": {
+      "title": "Text List to Text"
+    }
+  },
+  "5": {
+    "inputs": {
+      "delimiter": ", ",
+      "text_list": [
+        "3",
+        1
+      ]
+    },
+    "class_type": "Text List to Text",
+    "_meta": {
+      "title": "Text List to Text"
+    }
+  },
+  "6": {
+    "inputs": {
+      "name": "CivitAI",
+      "type": "text",
+      "value": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaSendText",
+    "_meta": {
+      "title": "Send Text"
+    }
+  },
+  "7": {
+    "inputs": {
+      "name": "Meta",
+      "type": "text",
+      "value": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaSendText",
+    "_meta": {
+      "title": "Send Text"
+    }
+  }
+}

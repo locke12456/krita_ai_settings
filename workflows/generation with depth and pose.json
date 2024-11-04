@@ -1,0 +1,358 @@
+{
+  "0": {
+    "inputs": {},
+    "class_type": "ETN_KritaCanvas",
+    "_meta": {
+      "title": "Krita Canvas"
+    }
+  },
+  "1": {
+    "inputs": {
+      "name": "Style",
+      "sampler_preset": "auto"
+    },
+    "class_type": "ETN_KritaStyle",
+    "_meta": {
+      "title": "Krita Style"
+    }
+  },
+  "2": {
+    "inputs": {
+      "width": [
+        "0",
+        1
+      ],
+      "height": [
+        "0",
+        2
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "3": {
+    "inputs": {
+      "name": "positive",
+      "type": "prompt (positive)",
+      "default": "",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "4": {
+    "inputs": {
+      "name": "negative",
+      "type": "prompt (negative)",
+      "default": "",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "5": {
+    "inputs": {
+      "part1": "",
+      "part2": [
+        "1",
+        3
+      ],
+      "part3": "",
+      "part4": [
+        "3",
+        0
+      ],
+      "separator": "BREAK"
+    },
+    "class_type": "CR Combine Prompt",
+    "_meta": {
+      "title": "\u2699\ufe0f CR Combine Prompt"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": [
+        "5",
+        0
+      ],
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "part1": [
+        "1",
+        4
+      ],
+      "part2": [
+        "4",
+        0
+      ],
+      "part3": "",
+      "part4": "",
+      "separator": "BREAK"
+    },
+    "class_type": "CR Combine Prompt",
+    "_meta": {
+      "title": "\u2699\ufe0f CR Combine Prompt"
+    }
+  },
+  "8": {
+    "inputs": {
+      "text": [
+        "7",
+        0
+      ],
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "9": {
+    "inputs": {
+      "name": "controlnet",
+      "type": "choice",
+      "default": "controlnet\\Line Art.safetensors",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "10": {
+    "inputs": {
+      "name": "Input image"
+    },
+    "class_type": "ETN_KritaImageLayer",
+    "_meta": {
+      "title": "Krita Image Layer"
+    }
+  },
+  "11": {
+    "inputs": {
+      "name": "strength",
+      "type": "number",
+      "default": 1,
+      "min": 0,
+      "max": 1
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "12": {
+    "inputs": {
+      "control_net_name": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "13": {
+    "inputs": {
+      "strength": [
+        "11",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "8",
+        0
+      ],
+      "control_net": [
+        "12",
+        0
+      ],
+      "image": [
+        "10",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "Apply ControlNet"
+    }
+  },
+  "14": {
+    "inputs": {
+      "name": "controlnet 2",
+      "type": "choice",
+      "default": "controlnet\\Line Art.safetensors",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "15": {
+    "inputs": {
+      "control_net_name": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "16": {
+    "inputs": {
+      "name": "Input image 2"
+    },
+    "class_type": "ETN_KritaImageLayer",
+    "_meta": {
+      "title": "Krita Image Layer"
+    }
+  },
+  "17": {
+    "inputs": {
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "13",
+        0
+      ],
+      "negative": [
+        "13",
+        1
+      ],
+      "control_net": [
+        "15",
+        0
+      ],
+      "image": [
+        "16",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "Apply ControlNet"
+    }
+  },
+  "18": {
+    "inputs": {
+      "name": "strength 2",
+      "type": "number",
+      "default": 1,
+      "min": 0,
+      "max": 1
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "19": {
+    "inputs": {
+      "seed": [
+        "0",
+        3
+      ],
+      "steps": [
+        "1",
+        7
+      ],
+      "cfg": [
+        "1",
+        8
+      ],
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "17",
+        0
+      ],
+      "negative": [
+        "17",
+        1
+      ],
+      "latent_image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "20": {
+    "inputs": {
+      "samples": [
+        "19",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "21": {
+    "inputs": {
+      "format": "PNG",
+      "images": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaOutput",
+    "_meta": {
+      "title": "Krita Output"
+    }
+  }
+}

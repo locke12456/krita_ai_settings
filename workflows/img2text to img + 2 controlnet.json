@@ -1,0 +1,367 @@
+{
+  "0": {
+    "inputs": {
+      "name": "Style",
+      "sampler_preset": "auto"
+    },
+    "class_type": "ETN_KritaStyle",
+    "_meta": {
+      "title": "Krita Style"
+    }
+  },
+  "1": {
+    "inputs": {
+      "name": "threshold",
+      "type": "number",
+      "default": 0.35000000000000003,
+      "min": 0,
+      "max": 1
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "2": {
+    "inputs": {
+      "name": "character threshold",
+      "type": "number",
+      "default": 0.85,
+      "min": 0,
+      "max": 1
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "3": {
+    "inputs": {},
+    "class_type": "ETN_KritaCanvas",
+    "_meta": {
+      "title": "Krita Canvas"
+    }
+  },
+  "4": {
+    "inputs": {
+      "name": "(1) control_net_name",
+      "type": "choice",
+      "default": "controlnet\\Line Art.safetensors",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "5": {
+    "inputs": {
+      "name": "(1) strength",
+      "type": "number",
+      "default": 1,
+      "min": 0,
+      "max": 1
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "6": {
+    "inputs": {
+      "name": "(1) Image"
+    },
+    "class_type": "ETN_KritaImageLayer",
+    "_meta": {
+      "title": "Krita Image Layer"
+    }
+  },
+  "7": {
+    "inputs": {
+      "name": "(2) control_net_name",
+      "type": "choice",
+      "default": "controlnet\\diffusers_xl_depth_full.safetensors",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "8": {
+    "inputs": {
+      "name": "(2) strength",
+      "type": "number",
+      "default": 1,
+      "min": 0,
+      "max": 1
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "9": {
+    "inputs": {
+      "name": "(2) Image"
+    },
+    "class_type": "ETN_KritaImageLayer",
+    "_meta": {
+      "title": "Krita Image Layer"
+    }
+  },
+  "10": {
+    "inputs": {
+      "width": [
+        "3",
+        1
+      ],
+      "height": [
+        "3",
+        2
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "11": {
+    "inputs": {
+      "text": [
+        "0",
+        4
+      ],
+      "clip": [
+        "0",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "12": {
+    "inputs": {
+      "model": "wd-v1-4-moat-tagger-v2",
+      "threshold": [
+        "1",
+        0
+      ],
+      "character_threshold": [
+        "2",
+        0
+      ],
+      "replace_underscore": false,
+      "trailing_comma": false,
+      "exclude_tags": "",
+      "image": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "WD14Tagger|pysssss",
+    "_meta": {
+      "title": "WD14 Tagger \ud83d\udc0d"
+    }
+  },
+  "13": {
+    "inputs": {
+      "name": "Output",
+      "type": "text",
+      "value": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaSendText",
+    "_meta": {
+      "title": "Send Text"
+    }
+  },
+  "14": {
+    "inputs": {
+      "control_net_name": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "15": {
+    "inputs": {
+      "control_net_name": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "16": {
+    "inputs": {
+      "text": [
+        "12",
+        0
+      ],
+      "clip": [
+        "0",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "17": {
+    "inputs": {
+      "strength": [
+        "5",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "16",
+        0
+      ],
+      "negative": [
+        "11",
+        0
+      ],
+      "control_net": [
+        "14",
+        0
+      ],
+      "image": [
+        "6",
+        0
+      ],
+      "vae": [
+        "0",
+        2
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "Apply ControlNet"
+    }
+  },
+  "18": {
+    "inputs": {
+      "strength": [
+        "8",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "17",
+        0
+      ],
+      "negative": [
+        "17",
+        1
+      ],
+      "control_net": [
+        "15",
+        0
+      ],
+      "image": [
+        "9",
+        0
+      ],
+      "vae": [
+        "0",
+        2
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "Apply ControlNet"
+    }
+  },
+  "19": {
+    "inputs": {
+      "seed": [
+        "3",
+        3
+      ],
+      "steps": [
+        "0",
+        7
+      ],
+      "cfg": [
+        "0",
+        8
+      ],
+      "sampler_name": [
+        "0",
+        5
+      ],
+      "scheduler": [
+        "0",
+        6
+      ],
+      "model": [
+        "0",
+        0
+      ],
+      "positive": [
+        "18",
+        0
+      ],
+      "negative": [
+        "18",
+        1
+      ],
+      "latent_image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "20": {
+    "inputs": {
+      "samples": [
+        "19",
+        0
+      ],
+      "vae": [
+        "0",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "21": {
+    "inputs": {
+      "format": "PNG",
+      "images": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaOutput",
+    "_meta": {
+      "title": "Krita Output"
+    }
+  }
+}

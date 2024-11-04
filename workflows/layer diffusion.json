@@ -1,0 +1,223 @@
+{
+  "0": {
+    "inputs": {
+      "ckpt_name": "models\\00\\SDXL\\autismmixSDXL_autismmixLightning_4step.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "1": {
+    "inputs": {
+      "text": "transparent_background, simple_background, score_9, score_8_up,  BREAK source_anime, rating_explicit, extremely detailed ,   breast_squeeze,  gloves,  upper_body, idle, thighhighs, see-through, (nipple_slip:1.25),  (puffy_nipples:1.25), cameltoe, pussy,  shiny_skin, shiny_eyes, dot_nose, parted_lips, uncensored, 1girl, huge_breasts,  narrow_waist, wide_hips, (skindentation:1.25), covered_navel, ",
+      "clip": [
+        "0",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "2": {
+    "inputs": {
+      "text": " out_of_frame, score_6, score_5, score_4, score_3, score_2, score_1 embedding:zPDXL-neg, shadows",
+      "clip": [
+        "0",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "3": {
+    "inputs": {
+      "config": "SDXL, Attention Injection",
+      "weight": 1,
+      "model": [
+        "0",
+        0
+      ]
+    },
+    "class_type": "LayeredDiffusionApply",
+    "_meta": {
+      "title": "Layer Diffuse Apply"
+    }
+  },
+  "4": {
+    "inputs": {
+      "vae_name": "models\\sdxl_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "5": {
+    "inputs": {
+      "model_name": "models\\4x-UltraSharp.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Load Upscale Model"
+    }
+  },
+  "6": {
+    "inputs": {},
+    "class_type": "ETN_KritaCanvas",
+    "_meta": {
+      "title": "Krita Canvas"
+    }
+  },
+  "7": {
+    "inputs": {
+      "width": [
+        "6",
+        1
+      ],
+      "height": [
+        "6",
+        2
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "8": {
+    "inputs": {
+      "seed": 842914856373691,
+      "steps": 10,
+      "cfg": 1.5,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "3",
+        0
+      ],
+      "positive": [
+        "1",
+        0
+      ],
+      "negative": [
+        "2",
+        0
+      ],
+      "latent_image": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "9": {
+    "inputs": {
+      "samples": [
+        "8",
+        0
+      ],
+      "vae": [
+        "0",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "10": {
+    "inputs": {
+      "sd_version": "SDXL",
+      "sub_batch_size": 16,
+      "samples": [
+        "8",
+        0
+      ],
+      "images": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "LayeredDiffusionDecode",
+    "_meta": {
+      "title": "Layer Diffuse Decode"
+    }
+  },
+  "11": {
+    "inputs": {
+      "mask": [
+        "10",
+        1
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "InvertMask"
+    }
+  },
+  "12": {
+    "inputs": {
+      "mask": [
+        "10",
+        1
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "13": {
+    "inputs": {
+      "format": "PNG",
+      "images": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaOutput",
+    "_meta": {
+      "title": "Krita Output"
+    }
+  },
+  "14": {
+    "inputs": {
+      "image": [
+        "10",
+        0
+      ],
+      "alpha": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "JoinImageWithAlpha",
+    "_meta": {
+      "title": "Join Image with Alpha"
+    }
+  },
+  "15": {
+    "inputs": {
+      "format": "PNG",
+      "images": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaOutput",
+    "_meta": {
+      "title": "Krita Output"
+    }
+  }
+}

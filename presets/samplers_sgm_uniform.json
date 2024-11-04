@@ -1,0 +1,9 @@
+{
+    "DPM++ 2M / sgm_uniform": {
+        "sampler": "dpmpp_2m",
+        "scheduler": "sgm_uniform",
+        "steps": 20,
+        "minimum_steps": 4,
+        "cfg": 7.0
+    }
+}

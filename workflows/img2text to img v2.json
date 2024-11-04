@@ -1,0 +1,214 @@
+{
+  "0": {
+    "inputs": {
+      "name": "Style",
+      "sampler_preset": "auto"
+    },
+    "class_type": "ETN_KritaStyle",
+    "_meta": {
+      "title": "Krita Style"
+    }
+  },
+  "1": {
+    "inputs": {
+      "name": "threshold",
+      "type": "number",
+      "default": 0.35000000000000003,
+      "min": 0,
+      "max": 1
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "2": {
+    "inputs": {
+      "name": "character threshold",
+      "type": "number",
+      "default": 0.85,
+      "min": 0,
+      "max": 1
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "3": {
+    "inputs": {},
+    "class_type": "ETN_KritaCanvas",
+    "_meta": {
+      "title": "Krita Canvas"
+    }
+  },
+  "4": {
+    "inputs": {
+      "width": [
+        "3",
+        1
+      ],
+      "height": [
+        "3",
+        2
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": [
+        "0",
+        4
+      ],
+      "clip": [
+        "0",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "model": "wd-v1-4-moat-tagger-v2",
+      "replace_underscore": false,
+      "trailing_comma": false,
+      "exclude_tags": "",
+      "image": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "WD14Tagger|pysssss",
+    "_meta": {
+      "title": "WD14 Tagger \ud83d\udc0d"
+    }
+  },
+  "7": {
+    "inputs": {
+      "root_dir": "input",
+      "file": "file.txt",
+      "append": "append",
+      "insert": true,
+      "text": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "SaveText|pysssss",
+    "_meta": {
+      "title": "Save Text \ud83d\udc0d"
+    }
+  },
+  "8": {
+    "inputs": {
+      "text": [
+        "6",
+        0
+      ],
+      "clip": [
+        "0",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "9": {
+    "inputs": {
+      "seed": [
+        "3",
+        3
+      ],
+      "steps": [
+        "0",
+        7
+      ],
+      "cfg": [
+        "0",
+        8
+      ],
+      "sampler_name": [
+        "0",
+        5
+      ],
+      "scheduler": [
+        "0",
+        6
+      ],
+      "denoise": 1,
+      "model": [
+        "0",
+        0
+      ],
+      "positive": [
+        "8",
+        0
+      ],
+      "negative": [
+        "5",
+        0
+      ],
+      "latent_image": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "10": {
+    "inputs": {
+      "samples": [
+        "9",
+        0
+      ],
+      "vae": [
+        "0",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "11": {
+    "inputs": {
+      "format": "PNG",
+      "images": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaOutput",
+    "_meta": {
+      "title": "Krita Output"
+    }
+  },
+  "12": {
+    "inputs": {
+      "name": "Output",
+      "type": "text",
+      "value": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaSendText",
+    "_meta": {
+      "title": "Send Text"
+    }
+  }
+}

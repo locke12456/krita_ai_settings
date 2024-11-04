@@ -1,0 +1,237 @@
+{
+  "3": {
+    "inputs": {},
+    "class_type": "ETN_KritaCanvas",
+    "_meta": {
+      "title": "Krita Canvas"
+    }
+  },
+  "4": {
+    "inputs": {
+      "name": "Style",
+      "sampler_preset": "auto"
+    },
+    "class_type": "ETN_KritaStyle",
+    "_meta": {
+      "title": "Krita Style"
+    }
+  },
+  "5": {
+    "inputs": {
+      "part1": "(transparent_background, simple_background:1.5),",
+      "part2": [
+        "4",
+        3
+      ],
+      "part3": "breast_squeeze,  gloves,  full_body, idle, thighhighs, see-through, (nipple_slip:1.25),  (puffy_nipples:1.25), cameltoe, pussy,  shiny_skin, shiny_eyes, dot_nose, parted_lips, uncensored, 1girl, huge_breasts,  narrow_waist, wide_hips, (skindentation:1.25), covered_navel, ",
+      "part4": "",
+      "separator": "BREAK"
+    },
+    "class_type": "CR Combine Prompt",
+    "_meta": {
+      "title": "\u2699\ufe0f CR Combine Prompt"
+    }
+  },
+  "6": {
+    "inputs": {
+      "width": [
+        "3",
+        1
+      ],
+      "height": [
+        "3",
+        2
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": [
+        "5",
+        0
+      ],
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "text": [
+        "4",
+        4
+      ],
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "9": {
+    "inputs": {
+      "config": "SDXL, Attention Injection",
+      "weight": 1,
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "LayeredDiffusionApply",
+    "_meta": {
+      "title": "Layer Diffuse Apply"
+    }
+  },
+  "10": {
+    "inputs": {
+      "seed": [
+        "3",
+        3
+      ],
+      "steps": [
+        "4",
+        7
+      ],
+      "cfg": [
+        "4",
+        8
+      ],
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "9",
+        0
+      ],
+      "positive": [
+        "7",
+        0
+      ],
+      "negative": [
+        "8",
+        0
+      ],
+      "latent_image": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "11": {
+    "inputs": {
+      "samples": [
+        "10",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "12": {
+    "inputs": {
+      "sd_version": "SDXL",
+      "sub_batch_size": 16,
+      "samples": [
+        "10",
+        0
+      ],
+      "images": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "LayeredDiffusionDecode",
+    "_meta": {
+      "title": "Layer Diffuse Decode"
+    }
+  },
+  "13": {
+    "inputs": {
+      "mask": [
+        "12",
+        1
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "InvertMask"
+    }
+  },
+  "14": {
+    "inputs": {
+      "mask": [
+        "12",
+        1
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "format": "PNG",
+      "images": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaOutput",
+    "_meta": {
+      "title": "Krita Output"
+    }
+  },
+  "16": {
+    "inputs": {
+      "image": [
+        "12",
+        0
+      ],
+      "alpha": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "JoinImageWithAlpha",
+    "_meta": {
+      "title": "Join Image with Alpha"
+    }
+  },
+  "17": {
+    "inputs": {
+      "format": "PNG",
+      "images": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaOutput",
+    "_meta": {
+      "title": "Krita Output"
+    }
+  }
+}
