@@ -1,0 +1,1252 @@
+{
+  "last_node_id": 20,
+  "last_link_id": 65,
+  "nodes": [
+    {
+      "id": 8,
+      "type": "ETN_KritaCanvas",
+      "pos": {
+        "0": 100,
+        "1": 2490
+      },
+      "size": [
+        200,
+        100
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            34,
+            59
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            43
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_KritaCanvas"
+      }
+    },
+    {
+      "id": 9,
+      "type": "ETN_KritaSelection",
+      "pos": {
+        "0": 100,
+        "1": 2720
+      },
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": [
+            35,
+            60,
+            64
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_KritaSelection"
+      }
+    },
+    {
+      "id": 10,
+      "type": "Bounded Image Crop with Mask",
+      "pos": {
+        "0": 515,
+        "1": 790
+      },
+      "size": {
+        "0": 352.79998779296875,
+        "1": 150
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 34
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 35
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            42
+          ]
+        },
+        {
+          "name": "IMAGE_BOUNDS",
+          "type": "IMAGE_BOUNDS",
+          "links": [
+            61
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Bounded Image Crop with Mask"
+      },
+      "widgets_values": [
+        64,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 11,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 515,
+        "1": 130
+      },
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 37
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 36,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            56
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 12,
+      "type": "CR Combine Prompt",
+      "pos": {
+        "0": 515,
+        "1": 460
+      },
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "part1",
+          "type": "STRING",
+          "link": 38,
+          "widget": {
+            "name": "part1"
+          },
+          "shape": 7
+        },
+        {
+          "name": "part2",
+          "type": "STRING",
+          "link": 39,
+          "widget": {
+            "name": "part2"
+          },
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            40
+          ]
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Combine Prompt"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        "",
+        ","
+      ]
+    },
+    {
+      "id": 13,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 1015,
+        "1": 130
+      },
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 41
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 40,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            55
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 15,
+      "type": "ImageScaleBy",
+      "pos": {
+        "0": 1015,
+        "1": 460
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 42
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            53
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScaleBy"
+      },
+      "widgets_values": [
+        "lanczos",
+        2
+      ]
+    },
+    {
+      "id": 16,
+      "type": "UltimateSDUpscaleNoUpscale",
+      "pos": {
+        "0": 1515,
+        "1": 130
+      },
+      "size": [
+        403.1999816894531,
+        570
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscaled_image",
+          "type": "IMAGE",
+          "link": 53
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 54
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 55
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 56
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 57
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 43,
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": 44,
+          "widget": {
+            "name": "steps"
+          }
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": 45,
+          "widget": {
+            "name": "cfg"
+          }
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": 46,
+          "widget": {
+            "name": "sampler_name"
+          }
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": 47,
+          "widget": {
+            "name": "scheduler"
+          }
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "link": 48,
+          "widget": {
+            "name": "denoise"
+          }
+        },
+        {
+          "name": "mode_type",
+          "type": "COMBO",
+          "link": 16,
+          "widget": {
+            "name": "mode_type"
+          }
+        },
+        {
+          "name": "tile_width",
+          "type": "INT",
+          "link": 49,
+          "widget": {
+            "name": "tile_width"
+          }
+        },
+        {
+          "name": "tile_height",
+          "type": "INT",
+          "link": 50,
+          "widget": {
+            "name": "tile_height"
+          }
+        },
+        {
+          "name": "mask_blur",
+          "type": "INT",
+          "link": 51,
+          "widget": {
+            "name": "mask_blur"
+          }
+        },
+        {
+          "name": "tile_padding",
+          "type": "INT",
+          "link": 52,
+          "widget": {
+            "name": "tile_padding"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            58
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltimateSDUpscaleNoUpscale"
+      },
+      "widgets_values": [
+        0,
+        "randomize",
+        20,
+        8,
+        "euler",
+        "normal",
+        0.2,
+        "Linear",
+        512,
+        512,
+        8,
+        32,
+        "None",
+        1,
+        64,
+        8,
+        16,
+        true,
+        false
+      ]
+    },
+    {
+      "id": 17,
+      "type": "ImageScaleBy",
+      "pos": {
+        "0": 2018.199951171875,
+        "1": 130
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 58
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            62
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScaleBy"
+      },
+      "widgets_values": [
+        "lanczos",
+        0.5
+      ]
+    },
+    {
+      "id": 18,
+      "type": "Bounded Image Blend with Mask",
+      "pos": {
+        "0": 2433.199951171875,
+        "1": 130
+      },
+      "size": {
+        "0": 365.4000244140625,
+        "1": 142
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "target",
+          "type": "IMAGE",
+          "link": 59
+        },
+        {
+          "name": "target_mask",
+          "type": "MASK",
+          "link": 60
+        },
+        {
+          "name": "target_bounds",
+          "type": "IMAGE_BOUNDS",
+          "link": 61
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            63
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Bounded Image Blend with Mask"
+      },
+      "widgets_values": [
+        1,
+        16
+      ]
+    },
+    {
+      "id": 19,
+      "type": "ETN_ApplyMaskToImage",
+      "pos": {
+        "0": 2898.60009765625,
+        "1": 130
+      },
+      "size": {
+        "0": 239.40000915527344,
+        "1": 46
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 63
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 64
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            65
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_ApplyMaskToImage"
+      }
+    },
+    {
+      "id": 20,
+      "type": "ETN_KritaOutput",
+      "pos": {
+        "0": 3238,
+        "1": 130
+      },
+      "size": [
+        200,
+        100
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 65
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "ETN_KritaOutput"
+      }
+    },
+    {
+      "id": 0,
+      "type": "ETN_KritaStyle",
+      "pos": {
+        "0": 100,
+        "1": 130
+      },
+      "size": {
+        "0": 315,
+        "1": 242
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            54
+          ]
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": [
+            37,
+            41
+          ]
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": [
+            57
+          ]
+        },
+        {
+          "name": "positive prompt",
+          "type": "STRING",
+          "links": [
+            38
+          ]
+        },
+        {
+          "name": "negative prompt",
+          "type": "STRING",
+          "links": [
+            36
+          ]
+        },
+        {
+          "name": "sampler name",
+          "type": "COMBO",
+          "links": [
+            46
+          ]
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "links": [
+            47
+          ]
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "links": [
+            44
+          ]
+        },
+        {
+          "name": "guidance",
+          "type": "FLOAT",
+          "links": [
+            45
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_KritaStyle"
+      },
+      "widgets_values": [
+        "1. Style",
+        "auto"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 502
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            48
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "2. denoise",
+        "number",
+        0.2,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 786
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "links": [
+            39
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "3. prompt",
+        "text",
+        "",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 3,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 1070
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "COMBO",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "4. mode_type",
+        "choice",
+        "Chess",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 4,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 1354
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [
+            49
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "5. tile_width",
+        "number (integer)",
+        1024,
+        512,
+        1024
+      ]
+    },
+    {
+      "id": 5,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 1638
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [
+            50
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "6. tile_height",
+        "number (integer)",
+        1024,
+        512,
+        1024
+      ]
+    },
+    {
+      "id": 6,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 1922
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [
+            52
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "7. tile_padding",
+        "number (integer)",
+        32,
+        64,
+        128
+      ]
+    },
+    {
+      "id": 7,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 2206
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [
+            51
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "8. mask_blur",
+        "number (integer)",
+        16,
+        16,
+        64
+      ]
+    }
+  ],
+  "links": [
+    [
+      16,
+      3,
+      0,
+      16,
+      11,
+      "COMBO"
+    ],
+    [
+      34,
+      8,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      35,
+      9,
+      0,
+      10,
+      1,
+      "MASK"
+    ],
+    [
+      36,
+      0,
+      4,
+      11,
+      1,
+      "STRING"
+    ],
+    [
+      37,
+      0,
+      1,
+      11,
+      0,
+      "CLIP"
+    ],
+    [
+      38,
+      0,
+      3,
+      12,
+      0,
+      "STRING"
+    ],
+    [
+      39,
+      2,
+      0,
+      12,
+      1,
+      "STRING"
+    ],
+    [
+      40,
+      12,
+      0,
+      13,
+      1,
+      "STRING"
+    ],
+    [
+      41,
+      0,
+      1,
+      13,
+      0,
+      "CLIP"
+    ],
+    [
+      42,
+      10,
+      0,
+      15,
+      0,
+      "IMAGE"
+    ],
+    [
+      43,
+      8,
+      3,
+      16,
+      5,
+      "INT"
+    ],
+    [
+      44,
+      0,
+      7,
+      16,
+      6,
+      "INT"
+    ],
+    [
+      45,
+      0,
+      8,
+      16,
+      7,
+      "FLOAT"
+    ],
+    [
+      46,
+      0,
+      5,
+      16,
+      8,
+      "COMBO"
+    ],
+    [
+      47,
+      0,
+      6,
+      16,
+      9,
+      "COMBO"
+    ],
+    [
+      48,
+      1,
+      0,
+      16,
+      10,
+      "FLOAT"
+    ],
+    [
+      49,
+      4,
+      0,
+      16,
+      12,
+      "INT"
+    ],
+    [
+      50,
+      5,
+      0,
+      16,
+      13,
+      "INT"
+    ],
+    [
+      51,
+      7,
+      0,
+      16,
+      14,
+      "INT"
+    ],
+    [
+      52,
+      6,
+      0,
+      16,
+      15,
+      "INT"
+    ],
+    [
+      53,
+      15,
+      0,
+      16,
+      0,
+      "IMAGE"
+    ],
+    [
+      54,
+      0,
+      0,
+      16,
+      1,
+      "MODEL"
+    ],
+    [
+      55,
+      13,
+      0,
+      16,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      56,
+      11,
+      0,
+      16,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      57,
+      0,
+      2,
+      16,
+      4,
+      "VAE"
+    ],
+    [
+      58,
+      16,
+      0,
+      17,
+      0,
+      "IMAGE"
+    ],
+    [
+      59,
+      8,
+      0,
+      18,
+      0,
+      "IMAGE"
+    ],
+    [
+      60,
+      9,
+      0,
+      18,
+      1,
+      "MASK"
+    ],
+    [
+      61,
+      10,
+      1,
+      18,
+      2,
+      "IMAGE_BOUNDS"
+    ],
+    [
+      62,
+      17,
+      0,
+      18,
+      3,
+      "IMAGE"
+    ],
+    [
+      63,
+      18,
+      0,
+      19,
+      0,
+      "IMAGE"
+    ],
+    [
+      64,
+      9,
+      0,
+      19,
+      1,
+      "MASK"
+    ],
+    [
+      65,
+      19,
+      0,
+      20,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1,
+      "offset": [
+        362.93946031101484,
+        -1781.7943305150166
+      ]
+    }
+  },
+  "version": 0.4
+}

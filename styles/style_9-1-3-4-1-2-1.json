@@ -1,0 +1,39 @@
+{
+    "name": "[illustrious] wai nsfw (lora)",
+    "version": 2,
+    "architecture": "auto",
+    "checkpoints": [
+        "models\\00\\SDXL\\[Illustrious] waiNSFW.safetensors"
+    ],
+    "loras": [
+        {
+            "name": "lora\\xl\\assets\\Pony_DetailV2.0.safetensors",
+            "strength": 1.0
+        },
+        {
+            "name": "lora\\xl\\ClearHand-V2.safetensors",
+            "strength": 2.0
+        },
+        {
+            "name": "lora\\xl\\chara\\shadow-alpha.safetensors",
+            "strength": 1.0
+        },
+        {
+            "name": "lora\\xl\\36oji\\peritya\\peritya_v2 17e.safetensors",
+            "strength": 0.5
+        }
+    ],
+    "style_prompt": "zPDXL3, zPDXLxxx, masterpiece, rating_explicit, shiny_skin, detailed surroundings, little details, hyperdetailed, 4k, high quality, masterpiece, shadow play,",
+    "negative_prompt": " zPDXLxxx-neg, 3d, realistic, text,  (worst quality:1.2),(low quality:1.2),(normal quality:1.2), signature, watermark, lowres,bad anatomy,bad hands,ugly,imperfect eyes,skewed eyes,unnatural face,unnatural body,error,extra limb,missing limbs,painting by bad-artist,",
+    "vae": "Checkpoint Default",
+    "clip_skip": 2,
+    "v_prediction_zsnr": false,
+    "self_attention_guidance": false,
+    "preferred_resolution": 1024,
+    "sampler": "DPM++ 2M / sgm_uniform",
+    "sampler_steps": 30,
+    "cfg_scale": 7.5,
+    "live_sampler": "Realtime - Hyper",
+    "live_sampler_steps": 6,
+    "live_cfg_scale": 1.8
+}

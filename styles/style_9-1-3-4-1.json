@@ -1,8 +1,10 @@
 {
-    "name": "[illustrious] wai hentai",
-    "version": 1,
-    "sd_version": "auto",
-    "sd_checkpoint": "models\\00\\SDXL\\waiNSFWIllustrious.safetensors",
+    "name": "[illustrious] wai nsfw ",
+    "version": 2,
+    "architecture": "auto",
+    "checkpoints": [
+        "models\\00\\SDXL\\[Illustrious] waiNSFW.safetensors"
+    ],
     "loras": [
         {
             "name": "lora\\xl\\assets\\Pony_DetailV2.0.safetensors",
@@ -13,28 +15,12 @@
             "strength": 2.0
         },
         {
-            "name": "lora\\xl\\concept\\Puffy_Pussy.safetensors",
-            "strength": 0.5
-        },
-        {
             "name": "lora\\xl\\concept\\Breast Size Slider - Pony.safetensors",
             "strength": 1.0
-        },
-        {
-            "name": "lora\\xl\\concept\\cat_girl_pony.safetensors",
-            "strength": 0.0
-        },
-        {
-            "name": "lora\\xl\\sex\\Proper_Grinding.safetensors",
-            "strength": 0.0
-        },
-        {
-            "name": "lora\\xl\\pose\\gravs-splits-position.safetensors",
-            "strength": 0.0
         }
     ],
-    "style_prompt": "rating_explicit, shiny_skin, detailed surroundings, little details, hyperdetailed, 4k, high quality, masterpiece, shadow play,",
-    "negative_prompt": "3d, realistic, text, signature, watermark,  (worst quality:1.2),(low quality:1.2),(normal quality:1.2),lowres,bad anatomy,bad hands,signature,watermarks,ugly,imperfect eyes,skewed eyes,unnatural face,unnatural body,error,extra limb,missing limbs,painting by bad-artist,",
+    "style_prompt": "zPDXL3, zPDXLxxx, masterpiece, rating_explicit, shiny_skin, detailed surroundings, little details, hyperdetailed, 4k, high quality, masterpiece, shadow play,",
+    "negative_prompt": " zPDXLxxx-neg, 3d, realistic, text,  (worst quality:1.2),(low quality:1.2),(normal quality:1.2), signature, watermark, lowres,bad anatomy,bad hands,ugly,imperfect eyes,skewed eyes,unnatural face,unnatural body,error,extra limb,missing limbs,painting by bad-artist,",
     "vae": "Checkpoint Default",
     "clip_skip": 2,
     "v_prediction_zsnr": false,

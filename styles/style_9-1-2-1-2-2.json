@@ -23,18 +23,6 @@
         {
             "name": "lora\\xl\\style\\Cromachina_Style.safetensors",
             "strength": 1.0
-        },
-        {
-            "name": "lora\\xl\\sex\\Proper_Grinding.safetensors",
-            "strength": 0.0
-        },
-        {
-            "name": "lora\\xl\\pose\\gravs-splits-position.safetensors",
-            "strength": 0.0
-        },
-        {
-            "name": "lora\\xl\\sex concept\\FFM_Threesome_Povfrontback.safetensors",
-            "strength": 0.0
         }
     ],
     "style_prompt": "zPDXL3, zPDXLxxx, cromachina, score_9, score_8_up,score_7_up, source_anime BREAK rating_explicit,  detailed surroundings, little details, hyperdetailed, 4k, high quality, masterpiece, shadow play,",

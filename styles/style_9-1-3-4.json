@@ -1,8 +1,10 @@
 {
     "name": "[illustrious] copycat",
-    "version": 1,
-    "sd_version": "auto",
-    "sd_checkpoint": "models\\00\\SDXL\\copycatIllustrious.safetensors",
+    "version": 2,
+    "architecture": "auto",
+    "checkpoints": [
+        "models\\00\\SDXL\\[Illustrious] copycat.safetensors"
+    ],
     "loras": [
         {
             "name": "lora\\xl\\assets\\Pony_DetailV2.0.safetensors",
@@ -13,24 +15,8 @@
             "strength": 2.0
         },
         {
-            "name": "lora\\xl\\concept\\Puffy_Pussy.safetensors",
-            "strength": 0.5
-        },
-        {
             "name": "lora\\xl\\concept\\Breast Size Slider - Pony.safetensors",
             "strength": 1.0
-        },
-        {
-            "name": "lora\\xl\\concept\\cat_girl_pony.safetensors",
-            "strength": 0.0
-        },
-        {
-            "name": "lora\\xl\\sex\\Proper_Grinding.safetensors",
-            "strength": 0.0
-        },
-        {
-            "name": "lora\\xl\\pose\\gravs-splits-position.safetensors",
-            "strength": 0.0
         }
     ],
     "style_prompt": "rating_explicit, shiny_skin, detailed surroundings, little details, hyperdetailed, 4k, high quality, masterpiece, shadow play,",

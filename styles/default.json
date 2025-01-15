@@ -1,8 +1,10 @@
 {
     "name": "SD3",
-    "version": 1,
-    "sd_version": "auto",
-    "sd_checkpoint": "models\\SD3\\sd3_medium.safetensors",
+    "version": 2,
+    "architecture": "auto",
+    "checkpoints": [
+        "models\\SD3\\absynthEnhancedStable_ddAbsynth35MV1.safetensors"
+    ],
     "loras": [],
     "style_prompt": "best quality, highres",
     "negative_prompt": "bad quality, low resolution, blurry",

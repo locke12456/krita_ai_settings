@@ -1,0 +1,35 @@
+{
+    "name": "[illustrious] miaomiao3DHarem",
+    "version": 2,
+    "architecture": "auto",
+    "checkpoints": [
+        "models\\00\\SDXL\\[Illustrious] miaomiao3DHarem.safetensors"
+    ],
+    "loras": [
+        {
+            "name": "lora\\xl\\assets\\Pony_DetailV2.0.safetensors",
+            "strength": 1.0
+        },
+        {
+            "name": "lora\\xl\\ClearHand-V2.safetensors",
+            "strength": 2.0
+        },
+        {
+            "name": "lora\\xl\\concept\\Breast Size Slider - Pony.safetensors",
+            "strength": 1.0
+        }
+    ],
+    "style_prompt": "masterpiece,best quality,very aesthetic,highres,absurdres,sensitive,photo background,shiny_skin,wet skin,3D, unreal, unity, blender,smooth skin,",
+    "negative_prompt": "sweat, wet, lowres,(bad),text,error,bad feet,fewer,extra,missing,worst quality,jpeg artifacts,low quality,watermark,unfinished,displeasing,oldest,early,chromatic aberration,signature,artistic error,username,scan,[abstract],english text,",
+    "vae": "models\\sdxl_vae.safetensors",
+    "clip_skip": 2,
+    "v_prediction_zsnr": false,
+    "self_attention_guidance": false,
+    "preferred_resolution": 1024,
+    "sampler": "Alternative - Euler A",
+    "sampler_steps": 30,
+    "cfg_scale": 2.0,
+    "live_sampler": "Realtime - Hyper",
+    "live_sampler_steps": 6,
+    "live_cfg_scale": 1.8
+}

@@ -1,0 +1,280 @@
+{
+  "0": {
+    "inputs": {
+      "name": "model",
+      "type": "choice",
+      "default": "llama3.1:latest",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter"
+  },
+  "1": {
+    "inputs": {
+      "name": "system",
+      "type": "text",
+      "default": " You are an expert in stable diffusion, you create impressive prompts from a few given words. You only respond with the prompt in English so that it can be used directly, do not put quotes or give additional instructions. You will give a description of the image to be created taking into account style, technique, textures, composition, statics and other elements you need. Describe each element in parentheses to delimit. You can give more emphasis to a part using \":number -0 to 2\" Example: input text: fat man with sunglasses prompt in response: (in the center of the image ((a man (with a rounder midsection:1.2), (wearing (retro-style sunglasse:2) perched on the end of his nose), (sitting alone on a weathered wooden dock at dusk), (surrounded by soft:0.5))), ((warm light that casts a gentle glow on the ri ppling water below), with subtle hints of tree branches and foliage in the background), (featuring a muted color palette with shades of blue, green, and yellow to evoke a sense of serenity and relaxation.)",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter"
+  },
+  "2": {
+    "inputs": {
+      "name": "temperature",
+      "type": "number",
+      "default": 0.8,
+      "min": 0,
+      "max": 1
+    },
+    "class_type": "ETN_Parameter"
+  },
+  "3": {
+    "inputs": {
+      "name": "prompt",
+      "type": "text",
+      "default": "",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter"
+  },
+  "4": {
+    "inputs": {
+      "name": "shot type",
+      "type": "choice",
+      "default": "None",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter"
+  },
+  "5": {
+    "inputs": {
+      "name": "camara",
+      "type": "choice",
+      "default": "None",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter"
+  },
+  "6": {
+    "inputs": {
+      "name": "film",
+      "type": "choice",
+      "default": "None",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter"
+  },
+  "7": {
+    "inputs": {
+      "name": "lighting",
+      "type": "choice",
+      "default": "None",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter"
+  },
+  "8": {
+    "inputs": {
+      "name": "Photographer",
+      "type": "choice",
+      "default": "\ufeffPhotographer",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter"
+  },
+  "9": {
+    "inputs": {
+      "name": "color",
+      "type": "choice",
+      "default": "Rainbow",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter"
+  },
+  "10": {
+    "inputs": {
+      "name": "theme",
+      "type": "choice",
+      "default": "Science Fiction",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter"
+  },
+  "11": {
+    "inputs": {
+      "name": "emotion",
+      "type": "choice",
+      "default": "Disgust",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter"
+  },
+  "12": {
+    "inputs": {
+      "name": "material",
+      "type": "choice",
+      "default": "None",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter"
+  },
+  "13": {
+    "inputs": {
+      "name": "style10",
+      "type": "choice",
+      "default": "None",
+      "min": 0,
+      "max": 0
+    },
+    "class_type": "ETN_Parameter"
+  },
+  "14": {
+    "inputs": {
+      "with_comma_condition": "Yes",
+      "style1": [
+        "4",
+        0
+      ],
+      "style2": [
+        "5",
+        0
+      ],
+      "style3": [
+        "6",
+        0
+      ],
+      "style4": [
+        "7",
+        0
+      ],
+      "style5": [
+        "8",
+        0
+      ],
+      "style6": [
+        "9",
+        0
+      ],
+      "style7": [
+        "10",
+        0
+      ],
+      "style8": [
+        "11",
+        0
+      ],
+      "style9": [
+        "12",
+        0
+      ],
+      "style10": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "Fans Styler"
+  },
+  "15": {
+    "inputs": {
+      "linebreak_addition": "false",
+      "prompt": [
+        "3",
+        0
+      ],
+      "text_a": [
+        "14",
+        0
+      ],
+      "text_b": [
+        "14",
+        1
+      ],
+      "text_c": [
+        "14",
+        2
+      ],
+      "text_d": [
+        "14",
+        3
+      ],
+      "text_e": [
+        "14",
+        4
+      ],
+      "text_f": [
+        "14",
+        5
+      ],
+      "text_g": [
+        "14",
+        6
+      ],
+      "text_h": [
+        "14",
+        7
+      ],
+      "text_i": [
+        "14",
+        8
+      ],
+      "text_j": [
+        "14",
+        9
+      ]
+    },
+    "class_type": "Fans Text Concatenate"
+  },
+  "16": {
+    "inputs": {
+      "prompt": [
+        "15",
+        0
+      ],
+      "debug": false,
+      "url": "http://127.0.0.1:11434",
+      "model": [
+        "0",
+        0
+      ],
+      "system": [
+        "1",
+        0
+      ],
+      "seed": 1194669003,
+      "top_k": 40,
+      "top_p": 0.9,
+      "temperature": [
+        "2",
+        0
+      ],
+      "num_predict": -1,
+      "tfs_z": 1,
+      "keep_alive": 0,
+      "keep_context": false,
+      "format": "text"
+    },
+    "class_type": "OllamaGenerateAdvance"
+  },
+  "17": {
+    "inputs": {
+      "name": "Output",
+      "type": "text",
+      "value": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaSendText"
+  }
+}

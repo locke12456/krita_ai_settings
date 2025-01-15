@@ -1,8 +1,10 @@
 {
     "name": "autismmixSDXL 4steps",
-    "version": 1,
-    "sd_version": "auto",
-    "sd_checkpoint": "models\\00\\SDXL\\autismmixSDXL_autismmixLightning_4step.safetensors",
+    "version": 2,
+    "architecture": "auto",
+    "checkpoints": [
+        "models\\00\\SDXL\\autismmixSDXL_autismmixLightning_4step.safetensors"
+    ],
     "loras": [
         {
             "name": "lora\\xl\\assets\\Pony_DetailV2.0.safetensors",

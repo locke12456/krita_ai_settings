@@ -1,0 +1,1227 @@
+{
+  "last_node_id": 22,
+  "last_link_id": 61,
+  "nodes": [
+    {
+      "id": 10,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 2970
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "COMBO",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "theme",
+        "choice",
+        "Science Fiction",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 11,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 3254
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "COMBO",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "emotion",
+        "choice",
+        "Disgust",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 12,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 3538
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "COMBO",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "material",
+        "choice",
+        "None",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 13,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 3822
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "COMBO",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "style10",
+        "choice",
+        "None",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 1,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 414
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "links": [
+            39
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "system",
+        "text",
+        " You are an expert in stable diffusion, you create impressive prompts from a few given words. You only respond with the prompt in English so that it can be used directly, do not put quotes or give additional instructions. You will give a description of the image to be created taking into account style, technique, textures, composition, statics and other elements you need. Describe each element in parentheses to delimit. You can give more emphasis to a part using \":number -0 to 2\" Example: input text: fat man with sunglasses prompt in response: (in the center of the image ((a man (with a rounder midsection:1.2), (wearing (retro-style sunglasse:2) perched on the end of his nose), (sitting alone on a weathered wooden dock at dusk), (surrounded by soft:0.5))), ((warm light that casts a gentle glow on the ri ppling water below), with subtle hints of tree branches and foliage in the background), (featuring a muted color palette with shades of blue, green, and yellow to evoke a sense of serenity and relaxation.)",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 3,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 982
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "prompt",
+        "auto",
+        "",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 15,
+      "type": "Fans Text Concatenate",
+      "pos": {
+        "0": 999,
+        "1": 177
+      },
+      "size": {
+        "0": 315,
+        "1": 322
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 57,
+          "widget": {
+            "name": "prompt"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 28,
+          "widget": {
+            "name": "text_a"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 29,
+          "widget": {
+            "name": "text_b"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_c",
+          "type": "STRING",
+          "link": 30,
+          "widget": {
+            "name": "text_c"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_d",
+          "type": "STRING",
+          "link": 31,
+          "widget": {
+            "name": "text_d"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_e",
+          "type": "STRING",
+          "link": 32,
+          "widget": {
+            "name": "text_e"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_f",
+          "type": "STRING",
+          "link": 33,
+          "widget": {
+            "name": "text_f"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_g",
+          "type": "STRING",
+          "link": 34,
+          "widget": {
+            "name": "text_g"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_h",
+          "type": "STRING",
+          "link": 35,
+          "widget": {
+            "name": "text_h"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_i",
+          "type": "STRING",
+          "link": 36,
+          "widget": {
+            "name": "text_i"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_j",
+          "type": "STRING",
+          "link": 37,
+          "widget": {
+            "name": "text_j"
+          },
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            42
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Fans Text Concatenate"
+      },
+      "widgets_values": [
+        "false",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 14,
+      "type": "Fans Styler",
+      "pos": {
+        "0": 520,
+        "1": 188
+      },
+      "size": {
+        "0": 315,
+        "1": 478
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "style1",
+          "type": "COMBO",
+          "link": 1,
+          "widget": {
+            "name": "style1"
+          }
+        },
+        {
+          "name": "style2",
+          "type": "COMBO",
+          "link": 2,
+          "widget": {
+            "name": "style2"
+          }
+        },
+        {
+          "name": "style3",
+          "type": "COMBO",
+          "link": 3,
+          "widget": {
+            "name": "style3"
+          }
+        },
+        {
+          "name": "style4",
+          "type": "COMBO",
+          "link": 4,
+          "widget": {
+            "name": "style4"
+          }
+        },
+        {
+          "name": "style5",
+          "type": "COMBO",
+          "link": 5,
+          "widget": {
+            "name": "style5"
+          }
+        },
+        {
+          "name": "style6",
+          "type": "COMBO",
+          "link": 6,
+          "widget": {
+            "name": "style6"
+          }
+        },
+        {
+          "name": "style7",
+          "type": "COMBO",
+          "link": 7,
+          "widget": {
+            "name": "style7"
+          }
+        },
+        {
+          "name": "style8",
+          "type": "COMBO",
+          "link": 8,
+          "widget": {
+            "name": "style8"
+          }
+        },
+        {
+          "name": "style9",
+          "type": "COMBO",
+          "link": 9,
+          "widget": {
+            "name": "style9"
+          }
+        },
+        {
+          "name": "style10",
+          "type": "COMBO",
+          "link": 10,
+          "widget": {
+            "name": "style10"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STYLE 1",
+          "type": "STRING",
+          "links": [
+            28
+          ]
+        },
+        {
+          "name": "STYLE 2",
+          "type": "STRING",
+          "links": [
+            29
+          ]
+        },
+        {
+          "name": "STYLE 3",
+          "type": "STRING",
+          "links": [
+            30
+          ]
+        },
+        {
+          "name": "STYLE 4",
+          "type": "STRING",
+          "links": [
+            31
+          ]
+        },
+        {
+          "name": "STYLE 5",
+          "type": "STRING",
+          "links": [
+            32
+          ]
+        },
+        {
+          "name": "STYLE 6",
+          "type": "STRING",
+          "links": [
+            33
+          ]
+        },
+        {
+          "name": "STYLE 7",
+          "type": "STRING",
+          "links": [
+            34
+          ]
+        },
+        {
+          "name": "STYLE 8",
+          "type": "STRING",
+          "links": [
+            35
+          ]
+        },
+        {
+          "name": "STYLE 9",
+          "type": "STRING",
+          "links": [
+            36
+          ]
+        },
+        {
+          "name": "STYLE 10",
+          "type": "STRING",
+          "links": [
+            37
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Fans Styler"
+      },
+      "widgets_values": [
+        "Yes",
+        "﻿Shot Type",
+        "﻿Camera Option",
+        "﻿Film",
+        "﻿Lighting",
+        "﻿Photographer",
+        "﻿Color",
+        "﻿Theme",
+        "﻿Emotion",
+        "﻿Material",
+        "﻿cat3"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 1266
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "COMBO",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "shot type",
+        "choice",
+        "Side View",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 5,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 1550
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "COMBO",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "camara",
+        "choice",
+        "General-Portrait",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 8,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 2402
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "COMBO",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "Photographer",
+        "choice",
+        "Edward Weston",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 6,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 1834
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "COMBO",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "film",
+        "choice",
+        "None",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 18,
+      "type": "Reroute",
+      "pos": {
+        "0": 595,
+        "1": 981
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 61,
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": [
+            57
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 0,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 474,
+        "1": 21
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "model",
+        "auto",
+        "NemoMix-Unleashed-12B:latest",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 698
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "temperature",
+        "auto",
+        0.8,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 16,
+      "type": "OllamaGenerateAdvance",
+      "pos": {
+        "0": 1345,
+        "1": 130
+      },
+      "size": [
+        400,
+        438
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "context",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "context"
+          },
+          "shape": 7
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 42,
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "name": "system",
+          "type": "STRING",
+          "link": 39,
+          "widget": {
+            "name": "system"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "response",
+          "type": "STRING",
+          "links": [
+            60
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "context",
+          "type": "STRING",
+          "links": null,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OllamaGenerateAdvance"
+      },
+      "widgets_values": [
+        "What is Art?",
+        false,
+        "http://127.0.0.1:11434",
+        "Rocinante-12B.2-12B:latest",
+        "You are an art expert, gracefully describing your knowledge in art domain.",
+        161877107,
+        "randomize",
+        40,
+        0.9,
+        0.8,
+        -1,
+        1,
+        0,
+        false,
+        "text",
+        ""
+      ]
+    },
+    {
+      "id": 7,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 2118
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "COMBO",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "lighting",
+        "choice",
+        "Rainy",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 9,
+      "type": "ETN_Parameter",
+      "pos": {
+        "0": 100,
+        "1": 2686
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "value",
+          "type": "COMBO",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_Parameter"
+      },
+      "widgets_values": [
+        "color",
+        "choice",
+        "Blush",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 22,
+      "type": "CR Prompt Text",
+      "pos": {
+        "0": 554,
+        "1": 1136
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            61
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Prompt Text"
+      },
+      "widgets_values": [
+        "kyoto_animation,  1girl, deep cleavage, wide_hips, kimono,  huge_breasts, thighhighs, nipple_slip, "
+      ]
+    },
+    {
+      "id": 21,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 2015,
+        "1": 122
+      },
+      "size": [
+        500.77310728759676,
+        555.1187673828122
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 60,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Title: \"Rapture in the Storm\"\n\nMedium: Digital Photography, in the style of Edward Weston\n\nSubject Matter: A young woman, dressed in a traditional kimono, stands in the midst of a stormy scene. The rain pours down upon her as she looks off into the distance, lost in thought.\n\nTechnical Details:\n- Camera: Nikon D850\n- Lens: AF-S NIKKOR 24mm f/1.8G ED\n- Aperture: f/5.6\n- Shutter Speed: 1/125 sec\n- ISO: 320\n\nDescription:\n\nThe young woman's face is a study in contrast, with her delicate features and alabaster skin set against the dark storm clouds behind her. Her eyes are closed as she inhales deeply, savoring the scent of rain and earth.\n\nHer kimono is wet from the downpour, clinging to her curvy figure like a second skin. The fabric has slipped slightly on one side, revealing the creamy swell of her breast and the rosy peak of her nipple. A blush stains her cheeks as she becomes aware of this exposure, but she makes no move to adjust her clothing.\n\nWater droplets glisten on her bare thighs, drawing the eye downwards to where her kimono ends just above her knees. Below that, sheer thigh-high stockings encase her long legs, their tops visible as they peek out from beneath the hem of her garment.\n\nIn the background, a lone cherry blossom tree stands amidst the rain-swept landscape, its delicate pink petals scattering on the wind. The scene is one of natural beauty and sensuality, capturing the essence of both the woman's vulnerability and her strength in the face of adversity.\n\nThe image is imbued with an air of science fiction, as if the woman has somehow stepped through a portal into this strange, stormy realm. Her expression conveys a sense of wonder mixed with trepidation, hinting at the unknown adventures that may await her in this unfamiliar world.\n\nOverall, \"Rapture in the Storm\" is a mesmerizing exploration of the female form and its connection to nature. The play of light and shadow, the delicate interplay between clothing and skin, and the sense of mystery and anticipation all come together to create a hauntingly beautiful image that will linger long after the viewer has turned away.\n\nDisgust, while not an overt part of the subject matter, may be invoked in some viewers by the woman's exposed nipple. The sight of her soft flesh on display could provoke feelings of unease or moral discomfort in those who view such nudity as inappropriate or indecent."
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      4,
+      0,
+      14,
+      0,
+      "COMBO"
+    ],
+    [
+      2,
+      5,
+      0,
+      14,
+      1,
+      "COMBO"
+    ],
+    [
+      3,
+      6,
+      0,
+      14,
+      2,
+      "COMBO"
+    ],
+    [
+      4,
+      7,
+      0,
+      14,
+      3,
+      "COMBO"
+    ],
+    [
+      5,
+      8,
+      0,
+      14,
+      4,
+      "COMBO"
+    ],
+    [
+      6,
+      9,
+      0,
+      14,
+      5,
+      "COMBO"
+    ],
+    [
+      7,
+      10,
+      0,
+      14,
+      6,
+      "COMBO"
+    ],
+    [
+      8,
+      11,
+      0,
+      14,
+      7,
+      "COMBO"
+    ],
+    [
+      9,
+      12,
+      0,
+      14,
+      8,
+      "COMBO"
+    ],
+    [
+      10,
+      13,
+      0,
+      14,
+      9,
+      "COMBO"
+    ],
+    [
+      28,
+      14,
+      0,
+      15,
+      1,
+      "STRING"
+    ],
+    [
+      29,
+      14,
+      1,
+      15,
+      2,
+      "STRING"
+    ],
+    [
+      30,
+      14,
+      2,
+      15,
+      3,
+      "STRING"
+    ],
+    [
+      31,
+      14,
+      3,
+      15,
+      4,
+      "STRING"
+    ],
+    [
+      32,
+      14,
+      4,
+      15,
+      5,
+      "STRING"
+    ],
+    [
+      33,
+      14,
+      5,
+      15,
+      6,
+      "STRING"
+    ],
+    [
+      34,
+      14,
+      6,
+      15,
+      7,
+      "STRING"
+    ],
+    [
+      35,
+      14,
+      7,
+      15,
+      8,
+      "STRING"
+    ],
+    [
+      36,
+      14,
+      8,
+      15,
+      9,
+      "STRING"
+    ],
+    [
+      37,
+      14,
+      9,
+      15,
+      10,
+      "STRING"
+    ],
+    [
+      39,
+      1,
+      0,
+      16,
+      2,
+      "STRING"
+    ],
+    [
+      42,
+      15,
+      0,
+      16,
+      1,
+      "STRING"
+    ],
+    [
+      57,
+      18,
+      0,
+      15,
+      0,
+      "STRING"
+    ],
+    [
+      60,
+      16,
+      0,
+      21,
+      0,
+      "STRING"
+    ],
+    [
+      61,
+      22,
+      0,
+      18,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9090909090909091,
+      "offset": {
+        "0": -861.2612915039062,
+        "1": 4.73090124130249
+      }
+    }
+  },
+  "version": 0.4
+}

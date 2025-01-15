@@ -19,22 +19,6 @@
         {
             "name": "lora\\xl\\concept\\Breast Size Slider - Pony.safetensors",
             "strength": 1.0
-        },
-        {
-            "name": "lora\\xl\\clothes\\See-through_microskirt.safetensors",
-            "strength": 0.0
-        },
-        {
-            "name": "lora\\xl\\chara\\Yamanobe Tomo [Seikon No Qwaser].safetensors",
-            "strength": 0.0
-        },
-        {
-            "name": "lora\\xl\\sex\\Proper_Grinding.safetensors",
-            "strength": 0.0
-        },
-        {
-            "name": "lora\\xl\\sex concept\\Hentai Comic Random Generator (START STORY).safetensors",
-            "strength": 0.0
         }
     ],
     "style_prompt": "score_9, score_8_up,score_7_up, source_anime BREAK rating_explicit, shiny_skin, detailed surroundings, little details, hyperdetailed, 4k, high quality, masterpiece, shadow play,",
